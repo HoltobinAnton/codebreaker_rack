@@ -1,0 +1,17 @@
+
+*{
+    font-weight: normal;
+    text-align: center;
+}
+
+body {
+    background-color: gainsboro;
+}
+
+table {
+    margin:  0 auto;
+}
+
+li {
+    list-style-typet: none;
+}
