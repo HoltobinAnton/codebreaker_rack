@@ -1,7 +1,6 @@
 require 'erb'
 require 'yaml'
 require_relative '../lib/code_breaker_gem_holtobin_anton/game.rb'
-
 class Racker
   attr_accessor :hint, :result
   def self.call(env)
@@ -24,9 +23,11 @@ class Racker
     when '/data_check' then data_check
     when '/save' then save
     when '/get_hint' then get_hint
-    else Rack::Response.new('Not Found', 404)
+    else Rack::Response.new('Not Found', 400)
     end
   end
+
+  private
 
   def start
     @request.session.clear

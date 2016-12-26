@@ -1,7 +1,14 @@
+require '../lib/racker'
+require 'rack'
+require 'capybara/rspec'
 
-require 'rspec'
-require 'rspec/collection_matchers'
-require_relative '../lib/code_breaker_gem_holtobin_anton/game.rb'
-require_relative '../lib/code_breaker_gem_holtobin_anton/data_check.rb'
-require_relative '../lib/code_breaker_gem_holtobin_anton/view.rb'
-require_relative '../lib/code_breaker_gem_holtobin_anton/game_io.rb'
+RSpec.configure do |config|
+  config.expect_with :rspec do |expectations|
+    expectations.include_chain_clauses_in_custom_matcher_descriptions = true
+  end
+
+  config.mock_with :rspec do |mocks|
+    mocks.verify_partial_doubles = true
+  end
+  config.shared_context_metadata_behavior = :apply_to_host_groups
+end

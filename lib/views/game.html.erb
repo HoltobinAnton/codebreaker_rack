@@ -23,12 +23,12 @@
         </form>
       </td>
       <td>
-        <form method="post" action="/get_hint">
-          <input type="submit" value="get hint" id ='hint_btn_id'>
+        <a  href="/get_hint" id ='hint_btn_id' class="btn_a">
+          Get hint
           <%if(hint)%>
-              <label for="hint_btn_id">hint: <%=hint%></label>
+              <label for="hint_btn_id"> : <%=hint%></label>
           <%end%>
-        </form>
+        </a>
       </td>
     </tr>
   </table>
@@ -46,6 +46,7 @@
       <% end%>
     </ul>
   </div>
+  <a class="btn_a" href="/start">Restart</a>
 </div>
 </body>
 </html>
